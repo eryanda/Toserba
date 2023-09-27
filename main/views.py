@@ -15,16 +15,14 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-
+@login_required(login_url='/login')
 
 # Create your views here.
-@login_required(login_url='/login')
 def show_main(request):
-    products = Product.objects.all()
-
+    products = Product.objects.filter(user=request.user)
     context = {
         'name': request.user.username,
-        'class': 'PBP B', # Kelas PBP kamu
+        'class': 'PBP B',
         'products' : products,
         'last_login': request.COOKIES['last_login'],
     }
