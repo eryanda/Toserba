@@ -24,7 +24,7 @@ urlpatterns = [
     path('login/', login_user, name='login'), #sesuaikan dengan nama fungsi yang dibuat
     path('logout/', logout_user, name='logout'),
     path('edit-product/<int:id>', edit_product, name='edit_product'),
-    path('delete/<int:id>', delete_product, name='delete_product'), # sesuaikan dengan nama fungsi yang dibuat
+    path('delete_product/<int:id>', delete_product, name='delete_product'), # sesuaikan dengan nama fungsi yang dibuat
     path('get-product/', get_product_json, name='get_product_json'),
     path('create-product-ajax/', add_product_ajax, name='add_product_ajax')
 
